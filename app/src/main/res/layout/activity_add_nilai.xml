@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Data Siswa"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtl_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Nama Siswa"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtl_nisn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintStart_toStartOf="@+id/txtl_name"
+        app:layout_constraintTop_toBottomOf="@+id/txtl_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_nisn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan NISN Siswa"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/spinner_kelas"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/txtl_nisn"
+        app:layout_constraintTop_toBottomOf="@+id/txtl_nisn" />
+
+    <Spinner
+        android:id="@+id/spinner_semester"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_kelas"
+        app:layout_constraintStart_toEndOf="@+id/spinner_kelas" />
+
+    <Spinner
+        android:id="@+id/spinner_Jurusan"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_semester"
+        app:layout_constraintStart_toEndOf="@+id/spinner_semester" />
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtl_mid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintStart_toStartOf="@+id/txtl_nisn"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_semester">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_mid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Nilai Mid Siswa"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/txtl_uas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:hintAnimationEnabled="true"
+        app:hintEnabled="true"
+        app:layout_constraintStart_toStartOf="@+id/txtl_nisn"
+        app:layout_constraintTop_toBottomOf="@+id/txtl_mid">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_uas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan Nilai Mid Siswa"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/txt_title"
+            app:layout_constraintTop_toBottomOf="@+id/txt_title" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_addData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="@color/black"
+        android:text="Tambah Data"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtl_uas" />
+
+
+    <Button
+        android:id="@+id/btn_detaildata"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="@color/black"
+        android:text="Lihat Nilai"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtl_uas" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
