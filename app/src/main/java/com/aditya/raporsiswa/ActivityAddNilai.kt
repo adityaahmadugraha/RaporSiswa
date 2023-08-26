@@ -1,41 +1,84 @@
 package com.aditya.raporsiswa
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
-import android.widget.Spinner
+import com.aditya.raporsiswa.databinding.ActivityAddNilaiBinding
+import com.google.android.material.textfield.TextInputEditText
 
 class ActivityAddNilai : AppCompatActivity() {
+
+    private lateinit var binding: ActivityAddNilaiBinding
+
+    private lateinit var txtName: TextInputEditText
+    private lateinit var txtNisn: TextInputEditText
+    private lateinit var txtMid: TextInputEditText
+    private lateinit var txtUas: TextInputEditText
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_add_nilai)
+        binding = ActivityAddNilaiBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
-//        val spinnerKelas: Spinner = findViewById(R.id.spinner_kelas)
-//        val adapter = ArrayAdapter.createFromResource(
-//            this,
-//            R.array.kelas_array, android.R.layout.simple_spinner_item
-//        )
-//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-//        spinnerKelas.adapter = adapter
-//
-//    }
-//}
-        val spinnerKelas: Spinner = findViewById(R.id.spinner_kelas)
-        val spinnerSemester: Spinner = findViewById(R.id.spinner_semester)
-        val spinnerJurusan: Spinner = findViewById(R.id.spinner_Jurusan)
+        txtName = binding.edtName
+        txtNisn = binding.edtNisn
+        txtMid = binding.edtMid
+        txtUas = binding.edtUas
 
-        val adapterKelas = ArrayAdapter.createFromResource(this, R.array.kelas_array, android.R.layout.simple_spinner_item)
+        // Mengatur adapter untuk Spinner Kelas
+        val adapterKelas = ArrayAdapter.createFromResource(
+            this,
+            R.array.kelas_array,
+            android.R.layout.simple_spinner_item
+        )
         adapterKelas.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerKelas.adapter = adapterKelas
+        binding.spinnerKelas.adapter = adapterKelas
 
-        val adapterSemester = ArrayAdapter.createFromResource(this, R.array.semester_array, android.R.layout.simple_spinner_item)
+        // Mengatur adapter untuk Spinner Semester
+        val adapterSemester = ArrayAdapter.createFromResource(
+            this,
+            R.array.semester_array,
+            android.R.layout.simple_spinner_item
+        )
         adapterSemester.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerSemester.adapter = adapterSemester
+        binding.spinnerSemester.adapter = adapterSemester
 
-
-        val adapterJurusan = ArrayAdapter.createFromResource(this, R.array.jurusan_array, android.R.layout.simple_spinner_item)
+        // Mengatur adapter untuk Spinner Jurusan
+        val adapterJurusan = ArrayAdapter.createFromResource(
+            this,
+            R.array.jurusan_array,
+            android.R.layout.simple_spinner_item
+        )
         adapterJurusan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinnerJurusan.adapter = adapterJurusan
+        binding.spinnerJurusan.adapter = adapterJurusan
+
+
+        binding.btnAddData.setOnClickListener {
+            val name = txtName.text.toString()
+            val nisn = txtNisn.text.toString()
+            val mid = txtMid.text.toString()
+            val uas = txtUas.text.toString()
+
+            val kelas = binding.spinnerKelas.selectedItem.toString()
+            val semester = binding.spinnerSemester.selectedItem.toString()
+            val jurusan = binding.spinnerJurusan.selectedItem.toString()
+
+            // Membuat objek Intent untuk berpindah ke ActivityRapor
+            val intent = Intent(this, ActivityRapor::class.java)
+
+            // Mengirim data melalui Intent
+            intent.putExtra("NAME", name)
+            intent.putExtra("NISN", nisn)
+            intent.putExtra("MID", mid)
+            intent.putExtra("UAS", uas)
+            intent.putExtra("KELAS", kelas)
+            intent.putExtra("SEMESTER", semester)
+            intent.putExtra("JURUSAN", jurusan)
+
+            startActivity(intent)
+        }
+
     }
 }
