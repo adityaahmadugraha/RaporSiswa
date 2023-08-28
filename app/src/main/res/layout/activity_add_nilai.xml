@@ -194,10 +194,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/spinner_semester">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edt_b_indi"
+                    android:id="@+id/edt_b_indo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:maxLength="3"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -220,6 +221,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:maxLength="3"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -243,6 +245,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:maxLength="3"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -265,6 +268,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:maxLength="3"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -287,6 +291,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
+                    android:maxLength="3"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -309,6 +314,7 @@
                     android:layout_height="match_parent"
                     android:inputType="number"
                     android:textSize="18sp"
+                    android:maxLength="3"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 

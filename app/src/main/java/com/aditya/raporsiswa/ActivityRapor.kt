@@ -14,16 +14,31 @@ class ActivityRapor : AppCompatActivity() {
         binding = ActivityRaporBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val intent: Intent = getIntent()
-        val name: String? = intent.getStringExtra("NAME")
-        val nisn: String? = intent.getStringExtra("NISN")
-        val kelas: String? = intent.getStringExtra("KELAS")
-        val semester: String? = intent.getStringExtra("SEMESTER")
-        val jurusan: String? = intent.getStringExtra("JURUSAN")
-        val mid = intent.getDoubleExtra("MID", 0.0)
-        val uas = intent.getDoubleExtra("UAS", 0.0)
-        val nilaiAkhir = intent.getDoubleExtra("NILAI_AKHIR", 0.0)
+        // Menerima data dari intent
+        val intent = intent
+        val namaSiswa = intent.getStringExtra("NAME")
+        val nisn = intent.getStringExtra("NISN")
+        val agama = intent.getStringExtra("AGAMA")
+        val database = intent.getStringExtra("DATABASE")
+        val jaringan = intent.getStringExtra("JARINGAN")
+        val mtk = intent.getStringExtra("MTK")
+        val bInggris = intent.getStringExtra("BINGGRIS")
+        val bIndo = intent.getStringExtra("BINDO")
+        val kelas = intent.getStringExtra("KELAS")
+        val semester = intent.getStringExtra("SEMESTER")
+        val jurusan = intent.getStringExtra("JURUSAN")
 
-
+        // Menampilkan data yang diterima di TextView yang sesuai
+        binding.tvName.text = "$namaSiswa"
+        binding.tvNisn.text = "$nisn"
+        binding.tvAgama.text = "$agama"
+        binding.tvDatabase.text = "$database"
+        binding.tvJaringan.text = "$jaringan"
+        binding.tvMatematika.text = "$mtk"
+        binding.tvBInggris.text = "$bInggris"
+        binding.tvBIndo.text = "$bIndo"
+        binding.tvKelas.text = "$kelas"
+        binding.tvSemester.text = "S$semester"
+        binding.tvJurusan.text = "$jurusan"
     }
 }

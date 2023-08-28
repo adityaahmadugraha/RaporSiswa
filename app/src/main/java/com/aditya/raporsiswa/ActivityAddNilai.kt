@@ -16,7 +16,6 @@ class ActivityAddNilai : AppCompatActivity() {
         binding = ActivityAddNilaiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
         val adapterKelas = ArrayAdapter.createFromResource(
             this,
             R.array.kelas_array,
@@ -49,9 +48,10 @@ class ActivityAddNilai : AppCompatActivity() {
             val jaringan = binding.edtJaringan.text.toString()
             val mtk = binding.edtMtk.text.toString()
             val bInggris = binding.edtBIngris.text.toString()
+            val bIndo = binding.edtBIndo.text.toString()
             val kelas = binding.spinnerKelas.selectedItem.toString()
             val semester = binding.spinnerSemester.selectedItem.toString()
-            val jurusan = binding.spinnerJurusan.selectedItem.toString()
+            val jurusan = binding.spinnerJurusan.selectedItem.toString() // Perbaikan nama spinner
 
             // Create an Intent to start the ActivityRapor
             val intent = Intent(this, ActivityRapor::class.java)
@@ -64,6 +64,7 @@ class ActivityAddNilai : AppCompatActivity() {
             intent.putExtra("JARINGAN", jaringan)
             intent.putExtra("MTK", mtk)
             intent.putExtra("BINGGRIS", bInggris)
+            intent.putExtra("BINDO", bIndo)
             intent.putExtra("KELAS", kelas)
             intent.putExtra("SEMESTER", semester)
             intent.putExtra("JURUSAN", jurusan)

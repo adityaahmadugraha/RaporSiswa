@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-
         binding.imgAdd.setOnClickListener {
             val intent = Intent(this@MainActivity, ActivityAddNilai::class.java)
             startActivity(intent)
