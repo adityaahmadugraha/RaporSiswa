@@ -401,6 +401,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="back"
+        android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/img_back"
         app:layout_constraintStart_toEndOf="@+id/img_back"

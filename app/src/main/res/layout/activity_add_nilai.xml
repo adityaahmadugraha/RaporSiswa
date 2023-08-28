@@ -198,7 +198,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:maxLength="3"
+                    android:maxLength="2"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -221,7 +221,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:maxLength="3"
+                    android:maxLength="2"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -245,7 +245,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:maxLength="3"
+                    android:maxLength="2"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -268,7 +268,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:maxLength="3"
+                    android:maxLength="2"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -291,7 +291,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:maxLength="3"
+                    android:maxLength="2"
                     android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
@@ -314,7 +314,7 @@
                     android:layout_height="match_parent"
                     android:inputType="number"
                     android:textSize="18sp"
-                    android:maxLength="3"
+                    android:maxLength="2"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 

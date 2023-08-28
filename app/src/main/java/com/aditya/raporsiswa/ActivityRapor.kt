@@ -14,6 +14,11 @@ class ActivityRapor : AppCompatActivity() {
         binding = ActivityRaporBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.imgBack.setOnClickListener {
+            intent = Intent(this@ActivityRapor, ActivityAddNilai::class.java)
+            startActivity(intent)
+        }
+
         // Menerima data dari intent
         val intent = intent
         val namaSiswa = intent.getStringExtra("NAME")
@@ -28,7 +33,7 @@ class ActivityRapor : AppCompatActivity() {
         val semester = intent.getStringExtra("SEMESTER")
         val jurusan = intent.getStringExtra("JURUSAN")
 
-        // Menampilkan data yang diterima di TextView yang sesuai
+        // Menampilkan data yang diterima di TextView
         binding.tvName.text = "$namaSiswa"
         binding.tvNisn.text = "$nisn"
         binding.tvAgama.text = "$agama"
@@ -38,7 +43,7 @@ class ActivityRapor : AppCompatActivity() {
         binding.tvBInggris.text = "$bInggris"
         binding.tvBIndo.text = "$bIndo"
         binding.tvKelas.text = "$kelas"
-        binding.tvSemester.text = "S$semester"
+        binding.tvSemester.text = "$semester"
         binding.tvJurusan.text = "$jurusan"
     }
 }

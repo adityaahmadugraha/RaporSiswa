@@ -53,10 +53,9 @@ class ActivityAddNilai : AppCompatActivity() {
             val semester = binding.spinnerSemester.selectedItem.toString()
             val jurusan = binding.spinnerJurusan.selectedItem.toString() // Perbaikan nama spinner
 
-            // Create an Intent to start the ActivityRapor
+
             val intent = Intent(this, ActivityRapor::class.java)
 
-            // Pass the data to the next activity using Intent extras
             intent.putExtra("NAME", name)
             intent.putExtra("NISN", nisn)
             intent.putExtra("AGAMA", agama)
