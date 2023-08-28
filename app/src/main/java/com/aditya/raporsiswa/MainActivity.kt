@@ -29,18 +29,9 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this@MainActivity, ActivityAddNilai::class.java)
             startActivity(intent)
         }
-
-
-        val dateTextView: TextView = findViewById(R.id.dateTextView)
-
-        // Membuat instance Calendar
-        val calendar = Calendar.getInstance()
-
-        // Format tanggal ke dalam format yang diinginkan
-        val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
-        val currentDate = dateFormat.format(calendar.time)
-
-        // Set tanggal yang diformat ke TextView
-        dateTextView.text = currentDate
+        binding.imgRapor.setOnClickListener {
+            val intent = Intent(this@MainActivity, ActivityRapor::class.java)
+            startActivity(intent)
+        }
     }
 }

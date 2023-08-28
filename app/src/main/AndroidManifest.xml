@@ -13,9 +13,6 @@
         android:theme="@style/Theme.RaporSiswa"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityHasil"
-            android:exported="false" />
-        <activity
             android:name=".ActivityRapor"
             android:exported="false" />
         <activity
