@@ -2,18 +2,22 @@
     <string name="app_name">RaporSiswa</string>
     <string name="footer">©copyrightsmkn022023</string>
     <string-array name="kelas_array">
+        <item>Kelas</item>
         <item>Kelas 10</item>
         <item>Kelas 11</item>
         <item>Kelas 12</item>
     </string-array>
     <string-array name="semester_array">
+        <item>Semester</item>
         <item>Semester 1</item>
         <item>Semester 2</item>
     </string-array>
     <string-array name="jurusan_array">
+        <item>Jurusan</item>
         <item>IPA</item>
         <item>IPS</item>
         <item>RPL</item>
         <item>JARINGAN</item>
     </string-array>
+
 </resources>

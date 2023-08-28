@@ -9,9 +9,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="-10dp"
+        android:layout_marginEnd="-4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -84,26 +83,26 @@
 
             <Spinner
                 android:id="@+id/spinner_kelas"
-                android:layout_width="wrap_content"
+                android:layout_width="120dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="24dp"
-                app:layout_constraintStart_toStartOf="@+id/txtl_nisn"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtl_nisn" />
 
             <Spinner
                 android:id="@+id/spinner_semester"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="@+id/spinner_kelas"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_jurusan"
                 app:layout_constraintStart_toEndOf="@+id/spinner_kelas" />
 
             <Spinner
-                android:id="@+id/spinner_Jurusan"
+                android:id="@+id/spinner_jurusan"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:layout_marginStart="8dp"
                 app:layout_constraintBottom_toBottomOf="@+id/spinner_semester"
+                app:layout_constraintEnd_toEndOf="@+id/txtl_nisn"
                 app:layout_constraintStart_toEndOf="@+id/spinner_semester" />
 
 
@@ -190,7 +189,8 @@
                 android:layout_marginEnd="24dp"
                 app:hintAnimationEnabled="true"
                 app:layout_constraintBottom_toBottomOf="@+id/txt_b_indo"
-                app:layout_constraintEnd_toEndOf="@+id/spinner_Jurusan"
+                app:layout_constraintEnd_toEndOf="@+id/spinner_jurusan"
+                app:layout_constraintStart_toEndOf="@+id/txt_b_indo"
                 app:layout_constraintTop_toBottomOf="@+id/spinner_semester">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -313,8 +313,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:inputType="number"
-                    android:textSize="18sp"
                     android:maxLength="2"
+                    android:textSize="18sp"
                     app:layout_constraintStart_toStartOf="@+id/txt_title"
                     app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
@@ -325,12 +325,12 @@
                 android:id="@+id/btn_addData"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="32dp"
                 android:backgroundTint="@color/black"
                 android:text="Tambah Data"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_database" />
+                app:layout_constraintTop_toBottomOf="@+id/txtl_database" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

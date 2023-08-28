@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.aditya.raporsiswa.databinding.ActivityAddNilaiBinding
 import com.google.android.material.textfield.TextInputEditText
 
@@ -51,24 +52,53 @@ class ActivityAddNilai : AppCompatActivity() {
             val bIndo = binding.edtBIndo.text.toString()
             val kelas = binding.spinnerKelas.selectedItem.toString()
             val semester = binding.spinnerSemester.selectedItem.toString()
-            val jurusan = binding.spinnerJurusan.selectedItem.toString() // Perbaikan nama spinner
+            val jurusan = binding.spinnerJurusan.selectedItem.toString()
 
-
-            val intent = Intent(this, ActivityRapor::class.java)
-
-            intent.putExtra("NAME", name)
-            intent.putExtra("NISN", nisn)
-            intent.putExtra("AGAMA", agama)
-            intent.putExtra("DATABASE", database)
-            intent.putExtra("JARINGAN", jaringan)
-            intent.putExtra("MTK", mtk)
-            intent.putExtra("BINGGRIS", bInggris)
-            intent.putExtra("BINDO", bIndo)
-            intent.putExtra("KELAS", kelas)
-            intent.putExtra("SEMESTER", semester)
-            intent.putExtra("JURUSAN", jurusan)
-
-            startActivity(intent)
+            if (isAllFieldsFilled(
+                    name,
+                    nisn,
+                    agama,
+                    database,
+                    jaringan,
+                    mtk,
+                    bInggris,
+                    bIndo,
+                    kelas,
+                    semester,
+                    jurusan
+                )
+            ) {
+                if (areSpinnerItemsValid(kelas, semester, jurusan)) {
+                    val intent = Intent(this, ActivityRapor::class.java)
+                    intent.putExtra("NAME", name)
+                    intent.putExtra("NISN", nisn)
+                    intent.putExtra("AGAMA", agama)
+                    intent.putExtra("DATABASE", database)
+                    intent.putExtra("JARINGAN", jaringan)
+                    intent.putExtra("MTK", mtk)
+                    intent.putExtra("BINGGRIS", bInggris)
+                    intent.putExtra("BINDO", bIndo)
+                    intent.putExtra("KELAS", kelas)
+                    intent.putExtra("SEMESTER", semester)
+                    intent.putExtra("JURUSAN", jurusan)
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(this, "Pilih item yang valid dari spinner!", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            } else {
+                Toast.makeText(this, "Semua field harus diisi!", Toast.LENGTH_SHORT).show()
+            }
         }
+    }
+    private fun isAllFieldsFilled(vararg fields: String): Boolean {
+        return fields.all { it.isNotEmpty() }
+    }
+    private fun areSpinnerItemsValid(vararg items: String): Boolean {
+        return items.all { isSpinnerItemValid(it) }
+    }
+    private fun isSpinnerItemValid(item: String): Boolean {
+
+        return item != "Kelas" && item != "Semester" && item != "Jurusan"
     }
 }
