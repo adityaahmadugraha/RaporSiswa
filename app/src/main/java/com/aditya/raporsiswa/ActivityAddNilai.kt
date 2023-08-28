@@ -58,8 +58,23 @@ class ActivityAddNilai : AppCompatActivity() {
         binding.btnAddData.setOnClickListener {
             val name = txtName.text.toString()
             val nisn = txtNisn.text.toString()
-            val mid = txtMid.text.toString()
-            val uas = txtUas.text.toString()
+//            val mid = txtMid.text.toString()
+//            val uas = txtUas.text.toString()
+            val midStr = txtMid.text.toString()
+            val uasStr = txtUas.text.toString()
+
+            if (midStr.isEmpty() || uasStr.isEmpty()) {
+                return@setOnClickListener
+            }
+            val mid = midStr.toDouble()
+            val uas = uasStr.toDouble()
+
+
+            if (mid > 100 || uas > 100) {
+                return@setOnClickListener
+            }
+
+            val nilaiAkhir = (mid * 0.4) + (uas * 0.6)
 
             val kelas = binding.spinnerKelas.selectedItem.toString()
             val semester = binding.spinnerSemester.selectedItem.toString()
@@ -76,6 +91,7 @@ class ActivityAddNilai : AppCompatActivity() {
             intent.putExtra("KELAS", kelas)
             intent.putExtra("SEMESTER", semester)
             intent.putExtra("JURUSAN", jurusan)
+            intent.putExtra("NILAI_AKHIR", nilaiAkhir)
 
             startActivity(intent)
         }

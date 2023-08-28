@@ -16,9 +16,6 @@
             android:name=".ActivityRapor"
             android:exported="false" />
         <activity
-            android:name=".ActivityDashboard"
-            android:exported="false" />
-        <activity
             android:name=".ActivityAddNilai"
             android:exported="false" />
         <activity

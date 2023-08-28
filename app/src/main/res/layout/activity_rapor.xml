@@ -27,7 +27,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
-        app:cardCornerRadius="16dp"
+        android:backgroundTint="@color/rapor"
+        app:cardCornerRadius="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -220,6 +221,33 @@
                 app:layout_constraintEnd_toEndOf="@+id/nilai_uas"
                 app:layout_constraintStart_toStartOf="@+id/nilai_uas"
                 app:layout_constraintTop_toBottomOf="@+id/nilai_uas" />
+
+
+            <TextView
+                android:id="@+id/txt_nilaiAkhir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nilai Akhir"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_semester" />
+
+            <TextView
+                android:id="@+id/tv_nilaiAkhir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="70"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="@+id/txt_nilaiAkhir"
+                app:layout_constraintStart_toStartOf="@+id/txt_nilaiAkhir"
+                app:layout_constraintTop_toBottomOf="@+id/txt_nilaiAkhir" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
