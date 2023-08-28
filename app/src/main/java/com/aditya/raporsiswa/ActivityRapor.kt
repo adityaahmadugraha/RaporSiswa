@@ -23,22 +23,7 @@ class ActivityRapor : AppCompatActivity() {
         val mid = intent.getDoubleExtra("MID", 0.0)
         val uas = intent.getDoubleExtra("UAS", 0.0)
         val nilaiAkhir = intent.getDoubleExtra("NILAI_AKHIR", 0.0)
-        binding.tvName.text = name
-        binding.tvNisn.text = nisn
-//        binding.tvNilaimid.text = mid
-//        binding.tvNilaiuas.text = uas
-        binding.tvKelas.text = kelas
-        binding.tvSemester.text = semester
-        binding.tvJurusan.text = jurusan
 
-        val tvMid = findViewById<TextView>(R.id.tv_nilaimid)
-        tvMid.text = "MID: $mid"
-
-        val tvUas = findViewById<TextView>(R.id.tv_nilaiuas)
-        tvUas.text = "UAS: $uas"
-
-        val tvNilaiAkhir = findViewById<TextView>(R.id.tv_nilaiAkhir)
-        tvNilaiAkhir.text = "Nilai Akhir: $nilaiAkhir"
 
     }
 }

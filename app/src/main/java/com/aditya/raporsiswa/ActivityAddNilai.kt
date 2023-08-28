@@ -11,23 +11,12 @@ class ActivityAddNilai : AppCompatActivity() {
 
     private lateinit var binding: ActivityAddNilaiBinding
 
-    private lateinit var txtName: TextInputEditText
-    private lateinit var txtNisn: TextInputEditText
-    private lateinit var txtMid: TextInputEditText
-    private lateinit var txtUas: TextInputEditText
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         binding = ActivityAddNilaiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
-        txtName = binding.edtName
-        txtNisn = binding.edtNisn
-        txtMid = binding.edtMid
-        txtUas = binding.edtUas
-
-        // Mengatur adapter untuk Spinner Kelas
         val adapterKelas = ArrayAdapter.createFromResource(
             this,
             R.array.kelas_array,
@@ -36,7 +25,6 @@ class ActivityAddNilai : AppCompatActivity() {
         adapterKelas.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerKelas.adapter = adapterKelas
 
-        // Mengatur adapter untuk Spinner Semester
         val adapterSemester = ArrayAdapter.createFromResource(
             this,
             R.array.semester_array,
@@ -45,7 +33,6 @@ class ActivityAddNilai : AppCompatActivity() {
         adapterSemester.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerSemester.adapter = adapterSemester
 
-        // Mengatur adapter untuk Spinner Jurusan
         val adapterJurusan = ArrayAdapter.createFromResource(
             this,
             R.array.jurusan_array,
@@ -54,47 +41,34 @@ class ActivityAddNilai : AppCompatActivity() {
         adapterJurusan.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.spinnerJurusan.adapter = adapterJurusan
 
-
         binding.btnAddData.setOnClickListener {
-            val name = txtName.text.toString()
-            val nisn = txtNisn.text.toString()
-//            val mid = txtMid.text.toString()
-//            val uas = txtUas.text.toString()
-            val midStr = txtMid.text.toString()
-            val uasStr = txtUas.text.toString()
-
-            if (midStr.isEmpty() || uasStr.isEmpty()) {
-                return@setOnClickListener
-            }
-            val mid = midStr.toDouble()
-            val uas = uasStr.toDouble()
-
-
-            if (mid > 100 || uas > 100) {
-                return@setOnClickListener
-            }
-
-            val nilaiAkhir = (mid * 0.4) + (uas * 0.6)
-
+            val name = binding.edtName.text.toString()
+            val nisn = binding.edtNisn.text.toString()
+            val agama = binding.edtAgama.text.toString()
+            val database = binding.edtDatabase.text.toString()
+            val jaringan = binding.edtJaringan.text.toString()
+            val mtk = binding.edtMtk.text.toString()
+            val bInggris = binding.edtBIngris.text.toString()
             val kelas = binding.spinnerKelas.selectedItem.toString()
             val semester = binding.spinnerSemester.selectedItem.toString()
             val jurusan = binding.spinnerJurusan.selectedItem.toString()
 
-            // Membuat objek Intent untuk berpindah ke ActivityRapor
+            // Create an Intent to start the ActivityRapor
             val intent = Intent(this, ActivityRapor::class.java)
 
-            // Mengirim data melalui Intent
+            // Pass the data to the next activity using Intent extras
             intent.putExtra("NAME", name)
             intent.putExtra("NISN", nisn)
-            intent.putExtra("MID", mid)
-            intent.putExtra("UAS", uas)
+            intent.putExtra("AGAMA", agama)
+            intent.putExtra("DATABASE", database)
+            intent.putExtra("JARINGAN", jaringan)
+            intent.putExtra("MTK", mtk)
+            intent.putExtra("BINGGRIS", bInggris)
             intent.putExtra("KELAS", kelas)
             intent.putExtra("SEMESTER", semester)
             intent.putExtra("JURUSAN", jurusan)
-            intent.putExtra("NILAI_AKHIR", nilaiAkhir)
 
             startActivity(intent)
         }
-
     }
 }
