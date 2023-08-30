@@ -3,7 +3,6 @@ package com.aditya.raporsiswa
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
 import com.aditya.raporsiswa.databinding.ActivityRaporBinding
 
 class ActivityRapor : AppCompatActivity() {
